@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+  <div class="data">
+    <div data-key="90" class="key">
+      <kbd>Z</kbd>
+      <span class="data">Save Song (Z)</span>
+    </div>
+    <div data-key="77" class="key">
+      <kbd>M</kbd>
+      <span class="data">Load Song (M)</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="sounds/clap.wav"></audio>
+  <audio data-key="83" src="sounds/hihat.wav"></audio>
+  <audio data-key="68" src="sounds/kick.wav"></audio>
+  <audio data-key="70" src="sounds/openhat.wav"></audio>
+  <audio data-key="71" src="sounds/boom.wav"></audio>
+  <audio data-key="72" src="sounds/ride.wav"></audio>
+  <audio data-key="74" src="sounds/snare.wav"></audio>
+  <audio data-key="75" src="sounds/tom.wav"></audio>
+  <audio data-key="76" src="sounds/tink.wav"></audio>
+
+<script>
+  function playSound(e) {
+
+    if (e.keyCode == "90")
+    {
+      saveSong(e);
+      // just drop out now
+      return;
+    }
+
+    if (e.keyCode == "77")
+    {
+      loadSong(e);
+      // just drop out now
+      return;
+    }
+
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if (!audio) return;
+
+    song.push(e.keyCode);
+
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+
+
+    // do this after a moment
+    // the longer this delay the more we see yellow
+    setTimeout(() => {
+      key.classList.remove('playing');
+      key.classList.add('lastplayed');
+
+      // set timeout to remove inside the timeout to add
+      setTimeout(() => {
+        key.classList.remove('lastplayed');
+        }, 100);
+
+      }, 150);
+
+  }
+
+  function saveSong(e)
+  {
+    // set our cookie to have our song
+    setCookie("drumSetSong", song.toString(), 15);
+    alert("Custom Song Loaded");
+  }
+
+  function loadSong(e)
+  {
+    // get our cookie to have our song
+    var songCookie = getCookie("drumSetSong");
+    alert("Custom Song Saved");
+  }
+
+  function setCookie(name,value,days) {
+    var d = new Date;
+    d.setTime(d.getTime() + 24*60*60*1000*days);
+    document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+  }
+
+function getCookie(name) {
+  var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return v ? v[2] : null;
+}
+
+function eraseCookie(name) {   
+    document.cookie = name+'=; Max-Age=-99999999;';  
+}
+
+
+  var song = [];
+  const keys = Array.from(document.querySelectorAll('.key'));
+  window.addEventListener('keydown', playSound);
+</script>
+
+
+</body>
+</html>

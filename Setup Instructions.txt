@@ -1,0 +1,80 @@
+Languages
+==========================================================
+Node
+PHP
+Python
+JAVA
+Rails
+
+IDE
+==========================================================
+VS Code 2019
+VS Community 2019
+JetBrains Suite (optional ** not free **)
+Android Studio
+SQL Server Managment Studio  - SSMS
+
+Tools
+==========================================================
+Postman
+Windows Terminal (Win Store)
+Lunacy "Sketch" (Win Store)
+TextPad (optional ** not free **)
+Virtual Box
+Apache Tomcat
+IIS
+AnyDesk - Remote control
+
+Setup Notes
+==========================================================
+NPM (make sure we have the latest)
+npm install npm@latest -g
+
+Setup Powershell Tools For VS Code
+code --install-extension ms-vscode.powershell
+
+Downloads
+==========================================================
+Visual Studio Code Intellisense Downloads
+https://code.visualstudio.com/docs/editor/intellisense
+
+
+Databases to install
+==========================================================
+MongoDB
+Postgresql
+MySQL
+SQL Server 2019
+
+
+Visual Studio Code Add-ins
+==========================================================
+npm install -g create-react-app
+npm install -g typescript
+npm install -g markdown-it
+code --install-extension ms-vscode.powershell
+
+
+
+My Training Links
+==========================================================
+Blockchain for beginners
+https://www.udemy.com/course/blockchain/learn/lecture/6026656#overview
+Blockchain fundamentals
+https://www.pluralsight.com/courses/blockchain-fundamentals?clickid=1xnX1Y0FCxyOWPQwUx0Mo38XUkn1kYWEE3Q0y00&irgwc=1&mpid=1193463&utm_source=impactradius&utm_medium=digital_affiliate&utm_campaign=1193463&aid=7010a000001xAKZAA2
+Blockchange Principles and Practices
+https://www.pluralsight.com/courses/blockchain-principles-practices?clickid=1xnX1Y0FCxyOWPQwUx0Mo38XUkn1kYQME3Q0y00&irgwc=1&mpid=1193463&utm_source=impactradius&utm_medium=digital_affiliate&utm_campaign=1193463&aid=7010a000001xAKZAA2
+
+Machine Learning Crash Course
+https://developers.google.com/machine-learning/crash-course/ml-intro
+
+Python GUI Examples
+https://likegeeks.com/python-gui-examples-tkinter-tutorial/
+
+A Cloud GURU
+https://acloud.guru/members/welcome
+
+
+
+
+

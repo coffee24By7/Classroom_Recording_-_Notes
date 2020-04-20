@@ -1,0 +1,6 @@
+WebSites :  Keycode.info
+
+Developer Tools in Chrome : Ctrl - Shift - I
+
+Extension backticks
+

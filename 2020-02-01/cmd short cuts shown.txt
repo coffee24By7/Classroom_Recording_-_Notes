@@ -1,0 +1,21 @@
+at command prompt
+
+# go to root folder
+cd\
+
+# change to subfolder quickly
+# changes to c:\windows
+cd wind* 
+
+
+# also changes to c:\windows
+cd\windows
+
+
+# change to long folders with spaces in names
+cd "A:\Work_OneDrive\OneDrive - Paya\Learning\Android\AndroidBasicTemplateFullFunctionality\templateApp\src\main\java\com\template\AndroidBasicTemplateFullFunctionality\Databases"
+
+
+# move up one folder
+cd..
+

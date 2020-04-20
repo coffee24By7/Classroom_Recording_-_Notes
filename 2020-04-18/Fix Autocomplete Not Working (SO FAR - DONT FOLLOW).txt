@@ -1,0 +1,47 @@
+To fix webpack.config.js not loading
+
+npm install webpack -g
+
+npm install webpack-cli -g
+
+npm install -D
+
+npm audit fix --force
+
+npm install webpack@^4.0.0
+
+You will need to fix a few things.
+
+
+start.js
+Change This
+// Connect to our Database and handle any bad connections
+mongoose.connect(process.env.DATABASE);
+
+To This
+// Connect to our Database and handle any bad connections
+mongoose.connect(process.env.DATABASE,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => {
+    console.log("connected to db...");
+  });
+
+Webpack.config.js
+Change This
+// We can also use plugins - this one will compress the crap out of our JS
+const uglify = new webpack.optimize.UglifyJsPlugin({ // eslint-disable-line
+  compress: { warnings: false }
+});
+
+To This
+// We can also use plugins - this one will compress the crap out of our JS
+const uglify = new config.optimization.minimize({ // eslint-disable-line
+  compress: { warnings: false }
+});
+
+delete all modules
+
+npm init
+npm install
+
+run website

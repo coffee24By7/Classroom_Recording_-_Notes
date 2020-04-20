@@ -1,0 +1,14 @@
+Recommended You Install
+
+Visual Studio Code
+MongoDB
+Postgresql
+MySql
+Java
+NPM
+Node
+Text editor of your choice
+
+
+Setup an account on mLab
+Setup an account on google developers (link in the bottom of instructor information file)
